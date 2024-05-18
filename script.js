@@ -3473,7 +3473,13 @@ function timerStop(){
 function changeLanguage(selectLanguage){
     step = 0;
     language = selectLanguage;
-
+    if (language === 'Chinese') {
+      document.body.classList.add('chinese');
+      document.body.classList.remove('english');
+    } else if (language === 'English') {
+      document.body.classList.add('english');
+      document.body.classList.remove('chinese');
+    }
   
   run();
 }
