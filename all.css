@@ -179,3 +179,16 @@ li a:hover {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
+p {
+  font-family: 宋体 
+}
+
+body.chinese p{
+  font-family: 宋体 
+}
+
+body.english p{
+  font-family: 'Arial', sans-serif;
+}
