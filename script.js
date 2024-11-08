@@ -1789,9 +1789,9 @@ function runChinese(){
   if(step==5){
     creatRoot();
     timers = []
-    let p1 = createTextElement("在区块链中, 拜占庭容错问题用于达成finalized区块的共识\n保证finalized区块的savety和liveness",35,30,40)
+    let p1 = createTextElement("在区块链中, 拜占庭容错问题用于达成finalized区块的共识\n保证finalized区块的safety和liveness",35,30,40)
     timers.push(setTimeout(()=>{
-      let p2 = createTextElement("savety指同高度不会有两个不同的finalized区块",35,30,40)
+      let p2 = createTextElement("safety指同高度不会有两个不同的finalized区块",35,30,40)
       let p3 = createTextElement("liveness指finalized的区块会被所有诚实节点收到",45,30,40)
       fadeIn([p1],600)
       fadeOut([p2,p3],600)
@@ -1974,7 +1974,7 @@ function runChinese(){
     timers.push(setTimeout(()=>{
       createFreeTextElement("已确定",51,5.5,15)
     },1000))
-    let p5 = createTextElement("已确定的区块指的是在已认证的基础上\n保证了同高度上没有其他认证块的区块\n即确保了savety",35,40,30)
+    let p5 = createTextElement("已确定的区块指的是在已认证的基础上\n保证了同高度上没有其他认证块的区块\n即确保了safety",35,40,30)
     closeButton()
 
   }
@@ -2736,7 +2736,7 @@ function runChinese(){
     timerStop()
     let p2 = createTextElement("那么同步网络下区块认证需要的投票数量不应该少于f+1",20,30,30)
     let p3 = createTextElement("这能保证拜占庭节点不超过一半的情况下,认证的区块有至少一个投票来自诚实节点",30,30,30)
-    let p4 = createTextElement("从而保证了区块的savety",40,30,30)
+    let p4 = createTextElement("从而保证了区块的safety",40,30,30)
     let b1 = createWaitState(0, 26,52,50,"#4682b4","#4682b4",'1')
     let b2 = createWaitState(0, 26,75,50,"#d8e15f","#d8e15f",'2')
     let b3 = createWaitState(0, 66,55,50,"red","red",'3')
