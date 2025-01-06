@@ -3,7 +3,7 @@ let step = -1;
 let timers = []
 let globalTimer = null;
 let continueButton;
-let language = "Chinese"
+let language = "English"
 document.addEventListener("DOMContentLoaded", function() {
         globalTimer = setInterval(() => {
         currentTime += 10;
@@ -31,7 +31,7 @@ function runEnglish(){
     fadeOut([p1,p2],600)
     timers.push(
     setTimeout(()=>{
-      fadeIn([p1,p2],600)
+      fadeIn([p1,p2],0)
     },1200))
 
     timers.push(setTimeout(()=>{
@@ -164,7 +164,7 @@ function runEnglish(){
       fadeIn([p1],600)
       fadeOut([p2],600)
       closeButton()
-    },3000))
+    },5000))
     fadeOut([p1],600)
 
   }
@@ -195,33 +195,9 @@ function runEnglish(){
     let p1 = createTextElement("Let’s go into detail about the EBFT algorithm",30,33,50)
     closeButton()
     fadeOut([p1],600)
-    step = 11
+    return
   }
 
-  // if(step==10){
-  //   creatRoot();
-  //   timers = []
-  //   let p1 = createTextElement("我们详细介绍一下EBFT算法",30,33,50)
-  //   let c1 = createWaitState(0, 46,45,50,"#4682b4","#4682b4",'X')
-  //   let p2 = createTextElement("EBFT中的诚实节点会严格遵守LCCR进行投票",85,20,30)
-  //   fadeIn([p1],600)
-  //   fadeOut([p2],600) 
-  //   closeButton()
-  // }
-
-  // if(step==11){
-  //   creatRoot();
-  //   timers = []
-  //   let c1 = createWaitState(0, 46,45,50,"#4682b4","#4682b4",'X')
-  //   let c2 = createWaitState(0, 46,45,50,"#008000","#008000",'B')
-  //   let p2 = createTextElement("EBFT中有两种节点,一种是诚实节点,诚实节点会严格遵守LCCR进行投票",85,20,30)
-  //   let p3 = createTextElement("另一种是拜占庭式节点,它会进行任意行为,比如随机投票或者不投票",85,20,30)
-  //   moveTo(c1.circle,36,45,600)
-  //   moveTo(c2.circle,56,45,600)
-  //   fadeOut([p3],600)
-  //   fadeIn([p2],600)
-  //   closeButton()
-  // }
 
   if(step==10){
     creatRoot();
@@ -260,7 +236,7 @@ function runEnglish(){
     scale(b1.block,1,5,600)
 
     fadeOut([p5],600)
-    fadeIn([p3,c1.circle, c2.circle, c3.circle],600)
+    fadeIn([p3,c1.circle, c2.circle, c3.circle],0)
     closeButton()
   }
 
@@ -409,7 +385,7 @@ function runEnglish(){
     let l5 = createLine(54,50,54,40,"black")
     scale(b3.block,2,1,600)
     scale(b5.block,2,1,600)
-    let p2 = createFreeTextElement("he branch with the highest certified block is called\nthe longest certified chain",51,45.5,15)
+    let p2 = createFreeTextElement("the branch with the highest certified block is called\nthe longest certified chain",51,45.5,15)
     closeButton()
   }
 
@@ -478,7 +454,7 @@ function runEnglish(){
     let c3 = createWaitState(0, 66,55,50,"B0C4DE","#B0C4DE",'X')
     let p5 = createTextElement("For each arriving block, if it extends the longest certified chain locally",80,20,30)
     timers.push(setTimeout(()=>{
-      fadeIn([p5],100)
+      fadeIn([p5],0)
       let p6 = createTextElement("then generate a vote for it and broadcast, while forwarding the block",80,20,30)
       fadeOut([p6],600)
       closeButton()
@@ -529,7 +505,7 @@ function runEnglish(){
       },500)) 
       fadeIn([p5],600)
       fadeOut([p6],600)
-    },1500))
+    },3500))
   }
 
   if(step == 23){
@@ -570,7 +546,7 @@ function runEnglish(){
       scale(createBlock(36,17, 40,30,"#B0C4DE", "blue",1).block,1.3,1,600)
       scale(createBlock(16,60, 40,30,"#B0C4DE", "blue",1).block,1.3,1,600)
       closeButton()
-    },3000))
+    },6000))
   }
 
 
@@ -768,10 +744,10 @@ function runEnglish(){
       let v2 = createVote(26,55,"#4682b4",1)
       let v3 = createVote(66,55,"#4682b4",1)
       let v4 = createVote(66,55,"#4682b4",1)
-      moveTo(v1,46,12,3000)
-      moveTo(v2,66,55,3000)
-      moveTo(v3,46,12,3000)
-      moveTo(v4,26,55,3000)
+      moveTo(v1,46,12,4000)
+      moveTo(v2,66,55,4000)
+      moveTo(v3,46,12,4000)
+      moveTo(v4,26,55,4000)
     }, 200))
     timers.push(setTimeout(()=>{
       scale(createBlock(79,60, 40,30,"#4682b4", "blue",1).block,1.3,1,600)
@@ -780,13 +756,13 @@ function runEnglish(){
       p4.style.display = "none"
       p4 = createTextElement("After both blocks received enough votes, two certified blocks appeared at height 1",85,40,30)
 
-    },3000))
+    },4000))
     timers.push(setTimeout(()=>{
       scale(createBlock(73,60, 40,30,"#d8e15f", "blue",1).block,1.3,1,600)
       scale(createBlock(39,17, 40,30,"#d8e15f", "blue",1).block,1.3,1,600)
       scale(createBlock(19,60, 40,30,"#d8e15f", "blue",1).block,1.3,1,600)
       closeButton()
-    },3200))
+    },4200))
   }
 
   if(step == 29){
@@ -822,10 +798,10 @@ function runEnglish(){
     
     timers.push(setTimeout(()=>{
       let p2 = createTextElement("A timer is divided into three sections, each section is one Δ, totaling 3Δ",85,30,30)
-      fadeIn([p1],600)
+      fadeIn([p1],0)
       fadeOut([p2],600)
       closeButton()
-    }, 2000))
+    }, 6000))
   }
 
   if(step==32){
@@ -893,7 +869,7 @@ function runEnglish(){
     createBlockFree(5.79,38, 40,30,"#4682b4", "blue",1)
     createFreeTextElement("finalized",51,5.5,15)
     createBlockFree(5.79,48, 40,30,"#4682b4", "gold",1)
-    let p1 = createTextElement("At this time, node 1 generates a new block with a height of 1.Because there is no conflict, a timer is added for it",85,30,30)
+    let p1 = createTextElement("At this time, node 1 generates a new block with a height of 1. Because there is no conflict, a timer is added for it",85,30,30)
     let p2 = ''
     let c1 = createTimer(1,26,55,50,9000,"1","#d8e15f")
     let c2 = createTimer(1,66,55,50,9000,"2","#B0C4DE")
@@ -934,15 +910,12 @@ function runEnglish(){
       //第一轮投票到达
       timers.push(setTimeout(()=>{
         timerStop()
-        fadeIn([p1],500)
-        p1 = createTextElement("At this time, node 1 generates a new block with a height of 1.Because there is no conflict, a timer is added for it",85,30,30)
-        fadeOut([p1],600)
         timers.push(setTimeout(()=>{
-          fadeIn([p1],500)
+          fadeIn([p1],0)
           p1 = createTextElement("Before the end of the first Δ, the block propagates to all nodes",85,30,30)
           fadeOut([p1],600)
           timers.push(setTimeout(()=>{
-            fadeIn([p1],500)
+            fadeIn([p1],0)
             p1 = createTextElement("Therefore, all nodes add timers to it",85,30,30)
             p2 = createTextElement("and start voting on the block",90,30,30)
             v1 = createVote(66,55,"#d8e15f",1)
@@ -956,7 +929,7 @@ function runEnglish(){
             timerStart()
             timers.push(setTimeout(()=>{
               timerStop()
-              fadeIn([p1,p2],500)
+              fadeIn([p1,p2],0)
               scale(createBlock(76, 60, 40,30,"#d8e15f","blue",1).block, 1.3,1,600)
               scale(createBlock(36,17,40,30,"#d8e15f","blue",1).block, 1.3,1,600)
               scale(createBlock(16,60, 40,30,"#d8e15f", "blue",1).block, 1.3,1,600)
@@ -965,7 +938,7 @@ function runEnglish(){
               fadeOut([p1],600)
               timers.push(setTimeout(()=>{
                 timerStart()
-                fadeIn([p1],500)
+                fadeIn([p1],0)
                 p1 = createTextElement("When the timer ends, the node sees this as an opportunity to converge,The node sets both the block and its not finalized ancestor block to finalized",80,30,30)
                 fadeOut([p1],600)
                 timers.push(setTimeout(()=>{
@@ -985,7 +958,7 @@ function runEnglish(){
 
 
       },2800))
-    },300))
+    },2300))
   }
 
 
@@ -1061,8 +1034,8 @@ function runEnglish(){
 
 
     timers.push(setTimeout(()=>{
-      fadeIn([p1,p2],600)
-      p1 = createTextElement("When the node detects a convergence opportunity through the timer.the node converts both the block and its not finalized ancestor block to the finalized block",80,30,30)
+      fadeIn([p1,p2],0)
+      p1 = createTextElement("When the node detects a convergence opportunity through the timer. The node converts both the block and its not finalized ancestor block to the finalized block",80,30,30)
   
       fadeOut([p1],600)
       timers.push(setTimeout(()=>{
@@ -1238,13 +1211,13 @@ function runEnglish(){
     timers.push(setTimeout(()=>{
       let b1 = createBlock(46,12, 40,30,"#4682b4", "black",1)
       let b2 = createBlock(46,12, 40,30,"#4682b4", "black",1)
-      moveTo(b1.block,26,55,2000)
-      moveTo(b2.block,66,55,2000)
+      moveTo(b1.block,26,55,4000)
+      moveTo(b2.block,66,55,4000)
       timers.push(setTimeout(()=>{
         let v1 = createVote(46,12,"#4682b4",1)
         let v2 = createVote(46,12,"#4682b4",1)
-        moveTo(v1,26,55,2000)
-        moveTo(v2,66,55,2000)
+        moveTo(v1,26,55,4000)
+        moveTo(v2,66,55,4000)
 
       }, 200))
 
@@ -1255,7 +1228,7 @@ function runEnglish(){
         createLine(13,60,16,50,"black")
 
         timers.push(setTimeout(()=>{
-          fadeIn([p1,p2],600)
+          fadeIn([p1,p2],0)
           p1 = createTextElement("Other nodes vote on it",82,30,30)
           p2 = createTextElement("confirming the certification of that block",87,30,30)
           fadeOut([p1,p2],600)
@@ -1263,21 +1236,21 @@ function runEnglish(){
           let v2 = createVote(66,55,"#4682b4",1)
           let v3 = createVote(66,55,"#4682b4",1)
           let v4 = createVote(26,55,"#4682b4",1)
-          moveTo(v1,46,12,2000)
-          moveTo(v2,46,12,2000)
-          moveTo(v3,26,55,2000)
-          moveTo(v4,66,55,2000)
+          moveTo(v1,46,12,4000)
+          moveTo(v2,46,12,4000)
+          moveTo(v3,26,55,4000)
+          moveTo(v4,66,55,4000)
           timers.push(setTimeout(()=>{
             scale(createBlock(73,60, 40,30,"#4682b4", "blue",1).block,1.3,1,600)
             scale(createBlock(33,17, 40,30,"#4682b4", "blue",1).block,1.3,1,600)
             scale(createBlock(13,60, 40,30,"#4682b4", "blue",1).block,1.3,1,600)
             closeButton()
-          },2000))
+          },4000))
 
         }))
 
 
-      },2000))
+      },4000))
 
     },600))
     
@@ -1317,14 +1290,14 @@ function runEnglish(){
     let v4 = createVote(26,55,"#4682b4",1, "red")
     let v5 = createVote(46,12,"#4682b4",1, "red")
     let v6 = createVote(46,12,"#4682b4",1, "red")
-    moveTo(v1,46,12,3000)
-    moveTo(v2,46,12,3000)
-    moveTo(v3,26,55,3000)
-    moveTo(v4,66,55,3000)
-    moveTo(v5,26,55,3000)
-    moveTo(v6,66,55,3000)
+    moveTo(v1,46,12,4000)
+    moveTo(v2,46,12,4000)
+    moveTo(v3,26,55,4000)
+    moveTo(v4,66,55,4000)
+    moveTo(v5,26,55,4000)
+    moveTo(v6,66,55,4000)
     timers.push(setTimeout(()=>{
-      fadeIn([p1],600)
+      fadeIn([p1],0)
       p1 = createTextElement("When enough comVotes are received\nThe node sees this as an opportunity for convergence and will convert the block to finalized",82,30,30)
       fadeOut([p1],600)
       createBlock(73,60, 40,30,"#4682b4", "gold",1)
@@ -1334,7 +1307,7 @@ function runEnglish(){
       scale(createBlock(33,17, 40,30,"#4682b4", "gold",1).block,1.3,1,600)
       scale(createBlock(13,60, 40,30,"#4682b4", "gold",1).block,1.3,1,600)
       closeButton()
-    },3000))
+    },4000))
 
   }
 
@@ -1416,7 +1389,7 @@ function runEnglish(){
     //moveTo(p1, 0, 20, 600)
     //moveTo(p2, 0, 30, 600)
     timers.push(setTimeout(()=>{
-      fadeIn([p1],600)
+      fadeIn([p1],0)
       p1 = createTextElement("The node first carries out the normal block certification process.Because block 2’s parent block is not unique in height, a proof vote is sent",70,30,30)
       fadeOut([p1],600)
       b1 = createBlock(26, 15, 40,30,"#B0C4DE", "black",1)
@@ -1452,7 +1425,7 @@ function runEnglish(){
 
           fadeOut([v1,v2,v3,v4],200)
           timers.push(setTimeout(()=>{
-            fadeIn([p1,p2],600)
+            fadeIn([p1,p2],0)
             p1 = createTextElement("After collecting enough proof votes, block 2 is certified",70,30,30)
             fadeOut([p1],600)
           },1300))
@@ -1477,7 +1450,7 @@ function runEnglish(){
     createFreeTextElement("witVote",40,7,15)
     createFreeTextElement("finalized vote",55,7,15)
 
-    let p1 = createTextElement("At this time, block 2 is certified and is unique at its height.However, the node will not issue a comVote, but will wait for its sub-blocks to appear",70,30,30)
+    let p1 = createTextElement("At this time, block 2 is certified and is unique at its height. However, the node will not issue a comVote, but will wait for its sub-blocks to appear",70,30,30)
     let p2 = createTextElement("",80,30,30)
 
     let c1 = createWaitState(0, 46,15,50,"#4682b4","#4682b4",'X')
@@ -1492,7 +1465,7 @@ function runEnglish(){
     fadeOut([p1,p2],600)
 
     timers.push(setTimeout(()=>{
-      fadeIn([p1,p2],600)
+      fadeIn([p1,p2],0)
       p1 = createTextElement("Sub-block 3 appears because its parent block 2 is unique at its height. Issue a finalized vote and receive finalized votes from other nodes",70,30,30)
       p2 = createTextElement("",80,30,30)
       fadeOut([p1,p2],600)
@@ -1536,7 +1509,7 @@ function runEnglish(){
             b5.innerCircle.setAttribute("stroke", "blue");
             scale(b5.block,1.3,1,600)
             //let t1 = createFreeTextElement("此时区块3收集到足够提交投票,certified并提交父区块",60,50,15)
-            fadeIn([p1,p2],600)
+            fadeIn([p1,p2],0)
             p1 = createTextElement("At this time, block 3 has collected enough confirmation votes. Certified and finalized the parent block",70,30,30)
             p2 = createTextElement("",80,30,30)
             fadeOut([p1,p2],600)
@@ -1562,7 +1535,7 @@ function runEnglish(){
         }, 4000))
       },1500))
 
-    }, 3000))
+    }, 8000))
   }
 
   if(step == 52){
@@ -1670,7 +1643,7 @@ function runChinese(){
     fadeOut([p1,p2],600)
     timers.push(
     setTimeout(()=>{
-      fadeIn([p1,p2],600)
+      fadeIn([p1,p2],0)
     },1200))
 
     timers.push(setTimeout(()=>{
@@ -1791,10 +1764,9 @@ function runChinese(){
     timers = []
     let p1 = createTextElement("在区块链中, 拜占庭容错问题用于达成finalized区块的共识\n保证finalized区块的safety和liveness",35,30,40)
     timers.push(setTimeout(()=>{
-      let p2 = createTextElement("safety指同高度不会有两个不同的finalized区块",35,30,40)
-      let p3 = createTextElement("liveness指finalized的区块会被所有诚实节点收到",45,30,40)
-      fadeIn([p1],600)
-      fadeOut([p2,p3],600)
+      let p2 = createTextElement("safety指同高度不会有两个不同的finalized区块\nliveness指finalized的区块会被所有诚实节点收到",35,30,40)
+      fadeIn([p1],0)
+      fadeOut([p2],600)
       closeButton()
     },3000))
     fadeOut([p1],600)
@@ -1892,7 +1864,7 @@ function runChinese(){
     scale(b1.block,1,5,600)
 
     fadeOut([p5],600)
-    fadeIn([p3,c1.circle, c2.circle, c3.circle],600)
+    fadeIn([p3,c1.circle, c2.circle, c3.circle],0)
     closeButton()
   }
 
@@ -1904,7 +1876,7 @@ function runChinese(){
     let b1 = createBlockFree(50,45, 40,30,"#4682b4", "black",1)
     scale(b1.block,5,5,1)
     fadeOut([p5],600)
-    fadeIn([p4],600)
+    fadeIn([p4],0)
     closeButton()
   }
 
@@ -1941,7 +1913,7 @@ function runChinese(){
 
 
     fadeOut([p5],600)
-    fadeIn([p4],600)
+    fadeIn([p4],0)
     closeButton()
   }
 
@@ -1974,7 +1946,7 @@ function runChinese(){
     timers.push(setTimeout(()=>{
       createFreeTextElement("已确定",51,5.5,15)
     },1000))
-    let p5 = createTextElement("已确定的区块指的是在已认证的基础上\n保证了同高度上没有其他认证块的区块\n即确保了safety",35,40,30)
+   let p5 =  createTextElement("已确定的区块指的是在已认证的基础上\n保证了同高度上没有其他认证块的区块\n即确保了safety",35,40,30)
     closeButton()
 
   }
@@ -2153,7 +2125,7 @@ function runChinese(){
           createLine(16,50,16,60,"black")
         },2500))
       },500)) 
-      fadeIn([p5],600)
+      fadeIn([p5],0)
       fadeOut([p6],600)
     },1500))
   }
@@ -2190,7 +2162,7 @@ function runChinese(){
     moveTo(v3,46,12,3000)
     moveTo(v4,66,55,3000)
     timers.push(setTimeout(()=>{
-      fadeIn([p6, p7],100)
+      fadeIn([p6, p7],0)
       p7 = createTextElement("区块收集到足够的投票后就会被认证",85,40,30)
       fadeOut([p7],600)
       scale(createBlock(76,60, 40,30,"#B0C4DE", "blue",1).block,1.3,1,600)
@@ -2448,7 +2420,7 @@ function runChinese(){
     
     timers.push(setTimeout(()=>{
       let p2 = createTextElement("一个定时器会被分为3段,一段为一Δ,总共为3Δ",85,30,40)
-      fadeIn([p1],600)
+      fadeIn([p1],0)
       fadeOut([p2],600)
       closeButton()
     }, 2000))
@@ -2561,17 +2533,17 @@ function runChinese(){
       //第一轮投票到达
       timers.push(setTimeout(()=>{
         timerStop()
-        fadeIn([p1,p2],500)
+        fadeIn([p1,p2],0)
         p1 = createTextElement("此时节点1产生了一个高度为1的新区块",85,30,30)
         p2 = createTextElement("因为没有产生冲突,所以为其添加一个定时器",90,30,30)
         fadeOut([p1,p2],600)
         timers.push(setTimeout(()=>{
-          fadeIn([p1,p2],500)
+          fadeIn([p1,p2],0)
           p1 = createTextElement("在第一个Δ结束前",85,30,30)
           p2 = createTextElement("区块传播到了所有的节点",90,30,30)
           fadeOut([p1,p2],600)
           timers.push(setTimeout(()=>{
-            fadeIn([p1,p2],500)
+            fadeIn([p1,p2],0)
             p1 = createTextElement("因此,所有节点都会为其添加定时器",85,30,30)
             p2 = createTextElement("并且开始进行对该区块的投票",90,30,30)
             v1 = createVote(66,55,"#d8e15f",1)
@@ -2585,7 +2557,7 @@ function runChinese(){
             timerStart()
             timers.push(setTimeout(()=>{
               timerStop()
-              fadeIn([p1,p2],500)
+              fadeIn([p1,p2],0)
               scale(createBlock(76, 60, 40,30,"#d8e15f","blue",1).block, 1.3,1,600)
               scale(createBlock(36,17,40,30,"#d8e15f","blue",1).block, 1.3,1,600)
               scale(createBlock(16,60, 40,30,"#d8e15f", "blue",1).block, 1.3,1,600)
@@ -2595,7 +2567,7 @@ function runChinese(){
               fadeOut([p1,p2],600)
               timers.push(setTimeout(()=>{
                 timerStart()
-                fadeIn([p1,p2],500)
+                fadeIn([p1,p2],0)
                 p1 = createTextElement("等到定时器结束,节点就认为这是一个收敛的机会",85,30,30)
                 p2 = createTextElement("节点会把该区块以及其未确定的祖先区块都设为确定",90,30,30)
                 fadeOut([p1,p2],600)
@@ -2692,7 +2664,7 @@ function runChinese(){
 
 
     timers.push(setTimeout(()=>{
-      fadeIn([p1,p2],600)
+      fadeIn([p1,p2],0)
       p1 = createTextElement("而当节点通过定时器检测到收敛机会时",82,30,30)
       p2 = createTextElement("节点会把该区块以及其未确定的祖先区块都转为确定区块,从而消除分支",90,30,30)
       fadeOut([p1,p2],600)
@@ -2892,7 +2864,7 @@ function runChinese(){
         createLine(13,60,16,50,"black")
 
         timers.push(setTimeout(()=>{
-          fadeIn([p1,p2],600)
+          fadeIn([p1,p2],0)
           p1 = createTextElement("其他节点对其发出投票",82,30,30)
           p2 = createTextElement("确定对该区块的认证",87,30,30)
           fadeOut([p1,p2],600)
@@ -2961,10 +2933,9 @@ function runChinese(){
     moveTo(v5,26,55,3000)
     moveTo(v6,66,55,3000)
     timers.push(setTimeout(()=>{
-      fadeIn([p1,p2],600)
-      p1 = createTextElement("当收到足够多的唯一性投票后",82,30,30)
-      p2 = createTextElement("节点认为这是一个收敛的机会,会将该区块转为确定状态",87,30,30)
-      fadeOut([p1,p2],600)
+      fadeIn([p1,p2],0)
+      p1 = createTextElement("当收到足够多的唯一性投票后\n节点认为这是一个收敛的机会,会将该区块转为确定状态",82,30,30)
+      fadeOut([p1],600)
       createBlock(73,60, 40,30,"#4682b4", "gold",1)
       createBlock(33,17, 40,30,"#4682b4", "gold",1)
       createBlock(13,60, 40,30,"#4682b4", "gold",1)
@@ -3013,7 +2984,7 @@ function runChinese(){
     timers = []
     timerStop()
     let p1 = createTextElement("一种是确定投票(finalized vote)",20,30,30)
-    let p2 = createTextElement("确定投票既是子区块的认证投票, 也是父区块的唯一性证明投票",30,30,30)
+    let p2 = createTextElement("一种是确定投票(finalized vote)\n确定投票既是子区块的认证投票, 也是父区块的唯一性证明投票",30,30,30)
     fadeOut([p2],600)
     let v1 = createVote(46,45,"#B0C4DE",1)
     scale(v1,4,4,600)
@@ -3054,10 +3025,10 @@ function runChinese(){
     //moveTo(p1, 0, 20, 600)
     //moveTo(p2, 0, 30, 600)
     timers.push(setTimeout(()=>{
-      fadeIn([p1],600)
-      p1 = createTextElement("节点首先进行正常的区块认证流程",70,30,30)
-      p2 = createTextElement("因为区块2的父区块在高度上不唯一,所以发送证明投票",80,30,30)
-      fadeOut([p1,p2],600)
+      fadeIn([p1],0)
+      p1 = createTextElement("节点首先进行正常的区块认证流程\n因为区块2的父区块在高度上不唯一,所以发送证明投票",70,30,30)
+
+      fadeOut([p1],600)
       b1 = createBlock(26, 15, 40,30,"#B0C4DE", "black",1)
       moveTo(b1.block,46,15,1500)
       fadeOut([b1.block],600)
@@ -3091,7 +3062,7 @@ function runChinese(){
 
           fadeOut([v1,v2,v3,v4],200)
           timers.push(setTimeout(()=>{
-            fadeIn([p1,p2],600)
+            fadeIn([p1,p2],0)
             p1 = createTextElement("收集了足够的证明投票,区块2被认证",70,30,30)
             fadeOut([p1],600)
           },1300))
@@ -3116,9 +3087,7 @@ function runChinese(){
     createFreeTextElement("证明投票",40,7,15)
     createFreeTextElement("确定投票",55,7,15)
 
-    let p1 = createTextElement("此时区块2被认证且在其高度上唯一",70,30,30)
-    let p2 = createTextElement("但是节点不会进行唯一性投票,而是会等待其子区块出现",80,30,30)
-
+    let p1 = createTextElement("此时区块2被认证且在其高度上唯一\n但是节点不会进行唯一性投票,而是会等待其子区块出现",70,30,30)
     let c1 = createWaitState(0, 46,15,50,"#4682b4","#4682b4",'X')
     let b0 = createBlock(46,30, 40,30,"white", "gold",0)
     let b1, b2,b3,b4
@@ -3128,13 +3097,12 @@ function runChinese(){
     let l1 = createLine(46,50,40,40,"black")
     let l2 = createLine(46,30,40,40,"black")
     let l3 = createLine(46,30,52,40,"black")
-    fadeOut([p1,p2],600)
+    fadeOut([p1],600)
 
     timers.push(setTimeout(()=>{
-      fadeIn([p1,p2],600)
-      p1 = createTextElement("子区块3出现,因其父区块2高度上唯一",70,30,30)
-      p2 = createTextElement("发出确定投票,并接收来自其他节点的确定投票",80,30,30)
-      fadeOut([p1,p2],600)
+      fadeIn([p1],0)
+      p1 = createTextElement("子区块3出现,因其父区块2高度上唯一\n发出确定投票,并接收来自其他节点的确定投票",70,30,30)
+      fadeOut([p1],600)
       b1 = createBlock(26, 15, 40,30,"#B0C4DE", "black",1)
       moveTo(b1.block,46,15,1500)
       fadeOut([b1.block],600)
@@ -3175,10 +3143,9 @@ function runChinese(){
             b5.innerCircle.setAttribute("stroke", "blue");
             scale(b5.block,1.3,1,600)
             //let t1 = createFreeTextElement("此时区块3收集到足够提交投票,认证并提交父区块",60,50,15)
-            fadeIn([p1,p2],600)
-            p1 = createTextElement("此时区块3收集到足够确定投票",70,30,30)
-            p2 = createTextElement("认证并确定父区块, 确定收敛",80,30,30)
-            fadeOut([p1,p2],600)
+            fadeIn([p1],0)
+            p1 = createTextElement("此时区块3收集到足够确定投票\n认证并确定父区块, 确定收敛",70,30,30)
+            fadeOut([p1],600)
 
 
 
@@ -3208,9 +3175,8 @@ function runChinese(){
     creatRoot();
     timers = []
     timerStop()
-    let p2 = createTextElement("部分同步网络下区块认证需要的投票数量不应该少于2f+1",20,30,30)
-    let p3 = createTextElement("这能保证拜占庭节点不超过三分之一的情况下,任意两个认证的区块有至少一个投票来自同一个诚实节点",30,30,30)
-    let p4 = createTextElement("从而保证了区块的安全性",40,30,30)
+    let p2 = createTextElement("部分同步网络下区块认证需要的投票数量不应该少于2f+1\n这能保证拜占庭节点不超过三分之一的情况下,任意两个认证的区块有至少一个投票来自同一个诚实节点\n从而保证了区块的安全性",20,30,30)
+
     let b1 = createWaitState(0, 26,52,50,"#4682b4","#4682b4",'1')
     let b2 = createWaitState(0, 26,75,50,"#d8e15f","#d8e15f",'2')
     let b3 = createWaitState(0, 66,55,50,"#B0C4DE","#B0C4DE",'3')
@@ -3253,7 +3219,7 @@ function runChinese(){
     }),1000)
 
     
-    fadeOut([p2,p3,p4,b1.circle,b2.circle,b3.circle,b4.circle,vote1,vote2,vote3,vote4],600)
+    fadeOut([p2,b1.circle,b2.circle,b3.circle,b4.circle,vote1,vote2,vote3,vote4],600)
     let p5 = createFreeTextElement("1个拜占庭节点,需要3个投票",76,43.5,15)
     closeButton()
   }
@@ -3265,10 +3231,9 @@ function runChinese(){
     creatRoot();
     timers = []
     timerStop()
-    let p1 = createTextElement("以上就是EBFT共识算法在同步网络和部分同步网络下的共识流程",30,30,30)
-    let p2 = createTextElement("但是需要注意的是,为了简化起见,流程中区块认证所需的投票数量都设置为了节点的总量",40,30,30)
+    let p1 = createTextElement("以上就是EBFT共识算法在同步网络和部分同步网络下的共识流程\n但是需要注意的是,为了简化起见,流程中区块认证所需的投票数量都设置为了节点的总量",30,30,30)
     closeButton()
-    fadeOut([p1,p2],600)
+    fadeOut([p1],600)
     
   }
 
